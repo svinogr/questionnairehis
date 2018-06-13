@@ -74,7 +74,7 @@ public class CheckActivity extends AppCompatActivity {
         interval.setCategory(getIntent().getStringExtra(CATEGORY));
         interval.setStart(getIntent().getIntExtra(START, 1));
         interval.setFinish(getIntent().getIntExtra(FINISH, 26));
-        setTitle(String.format(getString(R.string.title_interval_holder), interval.getStart(), interval.getFinish()));
+        setTitle(String.format(getString(R.string.title_interval_holder), interval.getStart()+1, interval.getFinish()));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         goodAnswerText = findViewById(R.id.check_activity_good_text_view);

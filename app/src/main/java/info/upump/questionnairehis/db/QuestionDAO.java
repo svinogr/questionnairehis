@@ -159,7 +159,7 @@ public class QuestionDAO extends DBDAO {
                             DataBaseHelper.TABLE_KEY_COMMENT},
                     DataBaseHelper.TABLE_KEY_CATEGORY + " LIKE ? LIMIT ? offset ? ", new String[]{String.valueOf("%" + interval.getCategory().toLowerCase() + "%"),
                             String.valueOf(interval.getFinish() - interval.getStart()),
-                            String.valueOf(interval.getStart()-1)},
+                            String.valueOf(interval.getStart())},
                     null, null, null, null
             );
             if (cursor.moveToFirst()) {

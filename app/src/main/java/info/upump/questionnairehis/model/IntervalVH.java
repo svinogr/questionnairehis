@@ -33,7 +33,7 @@ public class IntervalVH extends RecyclerView.ViewHolder {
 
     public void bind(Interval interval) {
         this.interval = interval;
-        String text = String.format(context.getString(R.string.title_interval_holder), interval.getStart(), interval.getFinish());
+        String text = String.format(context.getString(R.string.title_interval_holder), interval.getStart()+1, interval.getFinish());
         String numText = String.format(context.getString(R.string.interval_title_text), getAdapterPosition()+1);
         textView.setText(text);
         number.setText(numText);

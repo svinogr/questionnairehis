@@ -50,13 +50,22 @@ public class ChooseInterval extends AppCompatActivity {
     private void initIntervals() {
         QuestionDAO questionDAO = new QuestionDAO(this);
         int count = questionDAO.getCount();
-        int countCards = count / intervalCards;
+
+        double countCardsD = (double) count / intervalCards;
+        int one = (int) countCardsD;
+        double two = countCardsD -one;
+        int countCards;
+        if( two == 0 ){
+            countCards = one;
+        } else  countCards = one+1;
+        System.out.println(countCardsD+" "+one+" "+ two+ " "+ countCards);
+
         Interval interval;
-        for (int i = 0; i <= countCards; i++) {
+        for (int i = 0; i < countCards; i++) {
             interval = new Interval();
             interval.setCategory(category);
-            interval.setStart((i * intervalCards) + 1);
-            if (count < interval.getStart() + intervalCards) {
+            interval.setStart((i * intervalCards));
+            if (count <= interval.getStart() + intervalCards) {
                 int finish = count;
                 interval.setFinish(finish);
             } else interval.setFinish(interval.getStart() + intervalCards);
