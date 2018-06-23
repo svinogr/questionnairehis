@@ -34,7 +34,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_KEY_COMMENT = "comment";
     public static final String TABLE_KEY_RIGHT = "right";
     public static final String TABLE_KEY_ID_QUESTION = "id_question";
-    public static final String PASS = "7rRXRZvKOJpg";
+ 
 
     private static DataBaseHelper instance;
     private static final String CREATE_QUESTION_TABLE =
